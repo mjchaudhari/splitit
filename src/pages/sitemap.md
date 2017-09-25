@@ -1,0 +1,22 @@
+app-|
+    - login
+    - signup
+    - forgotpin
+    -tutorial
+        -tutorial1
+        -tutorial2
+        -tutorial3
+    -home 
+        - dashboard
+        - groups
+        - group
+            -groupDetails
+                -memberList
+                -inviteMembers
+            - topics
+            - topic
+            - topicDetail
+            - editTopic
+            - assets
+            - assetDetail
+            - editTopic

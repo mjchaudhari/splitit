@@ -14,3 +14,70 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.body-bg-landing{
+    background-image: url(../assets/img/people.png);
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;
+    image-rendering: pixelated;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: 50%;
+    margin-bottom: 50%;
+  }
+.div-center {
+    text-align: center;
+    width:100%;
+}
+.cp-logo-large {
+    height: 100px;
+    width: 100px;
+    margin:auto;
+}
+.cp-logo-medium {
+    height: 70px;
+    width: 70px;
+    margin:auto;
+}
+.cp-logo-small{
+    height: 40px;
+    width: 40px;
+    margin:auto;
+}
+@-webkit-keyframes rotating {
+    0% { -webkit-transform: rotate(0deg);}
+    100% { -webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes rotating {
+    0% { -moz-transform: rotate(0deg);}
+    100% { -moz-transform: rotate(360deg);}
+}
+@-o-keyframes rotating {
+    0% { -o-transform: rotate(0deg);}
+    100% { -o-transform: rotate(360deg);}
+}
+@-ms-keyframes rotating {
+    0% { -ms-transform: rotate(0deg);}
+    100% { -ms-transform: rotate(360deg);}
+}
+@keyframes rotating {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+    
+    
+.rotating {
+    -webkit-animation: rotating 2s infinite linear;
+    -moz-animation: rotating 2s infinite linear;
+    -o-animation: rotating 2s infinite linear;
+    -ms-animation: rotating 2s infinite linear;
+    animation: rotating 2s infinite linear;
+}
