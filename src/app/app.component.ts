@@ -9,8 +9,8 @@ import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage } f
   templateUrl: 'app.html'
 })
 export class App {
-  //rootPage = StartupPage;
-  rootPage = TabsPage;
+  rootPage = StartupPage;
+  //rootPage = TabsPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     
     platform.ready().then(() => {
