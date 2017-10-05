@@ -1,0 +1,26 @@
+
+<ion-content class="background">
+    
+    <ion-card>
+        <ion-card-header>
+          
+          <img class="cp-logo-large" src="./assets/img/cp.png" alt="">
+          
+          Sign up
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="model.firstName" placeholder="First Name" ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="model.lastName" placeholder="Last Name" ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="model.userName" placeholder="Mobile Number" ></ion-input>
+            </ion-item>
+            <button ion-button outline (click)="create()" >Log in</button>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

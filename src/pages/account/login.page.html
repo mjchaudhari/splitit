@@ -11,10 +11,10 @@
         <ion-card-content>
           <ion-list>
             <ion-item>
-              <ion-input type="text" placeholder="Mobile Number"></ion-input>
+              <ion-input type="text" [(ngModel)]="loginModel.userName" placeholder="Mobile Number" ></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input type="password" placeholder="Pin"></ion-input>
+              <ion-input type="password" [(ngModel)]="loginModel.secret" placeholder="Pin"></ion-input>
             </ion-item>
             <button ion-button outline (click)="doLogin()" >Log in</button>
           </ion-list>

@@ -1,23 +1,24 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
-import { TabsPage, SignupPage } from "../pages"
+import { LoginPage } from "../pages"
 import { Api } from "../../shared/api";
 
 @Component({
-  selector: 'login_page',
-  templateUrl: 'login.page.html'
+  selector: 'signup_page',
+  templateUrl: 'signup.page.html'
 })
-export class LoginPage {
+export class SignupPage {
 
-  loginModel = {
-    userName : "",
-    secret : ""
+  model = {
+    firstName : "",
+    lastName : "",
+    userName: ""
   }
   constructor(public navCtrl: NavController, private api: Api, public toast: ToastController) {
     
   }
-  doLogin (){
-    this.api.authenticate(this.loginModel)
+  create (){
+    this.api.createProfile(this.model)
     .subscribe((res)=>{
       if(res.isError){
         //Show message
@@ -30,13 +31,9 @@ export class LoginPage {
       }
       else {
         //handle error
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(LoginPage);
       }
     });
     
-  }
-
-  signUp () {
-    this.navCtrl.setRoot(SignupPage);
   }
 }

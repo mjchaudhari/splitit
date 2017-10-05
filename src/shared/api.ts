@@ -14,8 +14,9 @@ export class Api{
     private _getRequestOptions(){
         return new RequestOptions({
             headers: new Headers({
-                "Content-Type" : "applicaiton/json"
-                , "Authorization": localStorage.getItem("__at")
+                "Content-Type" : "application/json"
+                , "Authorization": 'Bearer ' + localStorage.getItem("__at")
+                //, "Accept-Charset": "UTF-8"
             })
         });
     }
@@ -33,13 +34,26 @@ export class Api{
         }
         return this.http.post(this._apiBase + '/v1/account/authenticate', cred, this._getRequestOptions())
         .map((response: Response)=> {
-            return response.json;
+            //save the token here
+            var resp = response.json();
+            if(!resp.isError){
+                localStorage.setItem("__at", resp.data.accessToken)
+            }
+            return resp.data;
         });
     }
 
     signoff (): void{
         localStorage.removeItem("__at");
         localStorage.removeItem("__ud");
+    }
+
+    createProfile (profile): Observable<any>{
+        return this.http.post(this._apiBase + '/v1/account', profile, this._getRequestOptions())
+        .map((response: Response)=> {
+            var resp = response.json();
+            return resp.data;
+        });
     }
 
 }
