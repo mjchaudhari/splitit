@@ -4,6 +4,8 @@ export * from "./account/signup.page"
 export * from "./tabs/tabs.page"
 export * from "./home/home.page"
 export * from "./groups/groups.page"
+export * from "./group/group.page"
 export * from "./friends/friends.page"
 export * from "./settings/settings.page"
+export * from "./assets/assets.page"
 

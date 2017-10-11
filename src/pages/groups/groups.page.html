@@ -1,14 +1,19 @@
 <ion-header>        
     <ion-navbar>
         <ion-title>Groups</ion-title>
+        <ion-buttons end>
+          <button ion-button clear icon-only (click)="newGroup()">
+            <ion-icon name='add' ></ion-icon>
+          </button>
+      </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content class="background">
   <ion-list>
-    <ion-item *ngFor = "let g of groups">
-      <ion-thumbnail item-start>
+    <ion-item *ngFor = "let g of groups" (click)="goToAssets(g._id)">
+      <ion-avatar item-start>
         <img src='{{g.thumbnail}}'>
-      </ion-thumbnail>
+      </ion-avatar>
       <h2>{{g.name}}</h2>
       <p>{{g.description}}</p>
       <button ion-button clear icon-only item-end (click)="groupActions(g._id)">

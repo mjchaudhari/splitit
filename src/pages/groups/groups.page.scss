@@ -1,23 +1,10 @@
 groups_page {
     .background {
-        background-image: url(../assets/img/bg-bokeh.jpg);
-    }
-    // .scroll-content {
-    //     align-content: center;
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     text-align: center;
-    // }
-    .card{
-        box-shadow: none;
-        background: rgba(0,0,0,0.5%);
-        border-radius: 5px;
+        //background-image: url(../assets/img/bg-bokeh.jpg);
     }
     .item{
-        margin-bottom: 10px;
-        background: rgba(255,255,255,0.5%);
+        background: transparent;
         border: medium none;
-        color: whitesmoke
+        //color: whitesmoke
     }
 }

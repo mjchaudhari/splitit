@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { App } from './app.component';
-import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, SettingsPage, SignupPage} from '../pages/pages';
+import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, SettingsPage, SignupPage, GroupPage, AssetsPage} from '../pages/pages';
 import { Api } from "../shared/api";
 
 @NgModule({
@@ -14,10 +14,12 @@ import { Api } from "../shared/api";
     App,
     StartupPage,
     LoginPage,
+    SignupPage,
     TabsPage,
     HomePage,
-    GroupsPage,
-    FriendsPage, SettingsPage, SignupPage
+    GroupsPage, GroupPage,
+    FriendsPage, SettingsPage,
+    AssetsPage
   ],
   imports: [
     BrowserModule,
@@ -29,9 +31,12 @@ import { Api } from "../shared/api";
     App,
     StartupPage,
     LoginPage,
+    SignupPage,
     TabsPage,
     HomePage,
-    GroupsPage,FriendsPage, SettingsPage, SignupPage
+    GroupsPage, GroupPage,
+    FriendsPage, SettingsPage,
+    AssetsPage
   ],
   providers: [
     StatusBar,
