@@ -3,14 +3,15 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //import { NavController} from 'ionic-angular';
-import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage } from '../pages/pages';
+import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, GroupPage } from '../pages/pages';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  
 })
 export class App {
   //rootPage = StartupPage;
-  rootPage = TabsPage;
+  rootPage = GroupPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     
     platform.ready().then(() => {

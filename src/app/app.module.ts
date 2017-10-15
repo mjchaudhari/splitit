@@ -8,18 +8,21 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { App } from './app.component';
 import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, SettingsPage, SignupPage, GroupPage, AssetsPage} from '../pages/pages';
 import { Api } from "../shared/api";
-
+import { imagePicker } from "../components/components";
 @NgModule({
   declarations: [
-    App,
-    StartupPage,
-    LoginPage,
-    SignupPage,
-    TabsPage,
-    HomePage,
-    GroupsPage, GroupPage,
-    FriendsPage, SettingsPage,
-    AssetsPage
+    App
+    , StartupPage
+    , LoginPage
+    , SignupPage
+    , TabsPage
+    , HomePage
+    , GroupsPage, GroupPage
+    , FriendsPage, SettingsPage
+    , AssetsPage
+
+    //Components
+    , imagePicker
   ],
   imports: [
     BrowserModule,

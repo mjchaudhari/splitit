@@ -1,0 +1,11 @@
+
+<div class="image-container">
+    <img [src]="image"/>
+    <div class="fileUpload btn btn-primary">
+        <!-- <button ion-button clear icon-only> -->
+            <!-- <ion-icon class="upload-icon" name="camera"></ion-icon> -->
+        <!-- </button>  -->
+        <input type="file" class="upload" accept="image/*" (change)="imageSelected($event)"/>
+    </div>
+    
+</div>
