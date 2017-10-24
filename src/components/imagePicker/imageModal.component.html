@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Description
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="cancel()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Ok</span>
+                <ion-icon name="md-Ok" showWhen="android, windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <div class="image-container">
+        <div class="fileUpload" [style.background-image]="'url(' + image + ')'">
+            <input type="file" class="upload" accept="image/*" (change)="imageSelected($event)"/>
+        </div> 
+    </div>    
+    <!-- <button ion-button (click)="cancel()">Cancel</button>
+    <button ion-button (click)="dismiss()">Ok</button> -->
+
+</ion-content>`

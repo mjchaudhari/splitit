@@ -8,7 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { App } from './app.component';
 import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, SettingsPage, SignupPage, GroupPage, AssetsPage} from '../pages/pages';
 import { Api } from "../shared/api";
-import { imagePicker } from "../components/components";
+import { ImagePicker, ImageModal } from "../components/components";
+
 @NgModule({
   declarations: [
     App
@@ -22,7 +23,9 @@ import { imagePicker } from "../components/components";
     , AssetsPage
 
     //Components
-    , imagePicker
+     , ImagePicker
+    , ImageModal
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { imagePicker } from "../components/components";
     HomePage,
     GroupsPage, GroupPage,
     FriendsPage, SettingsPage,
-    AssetsPage
+    AssetsPage,
+    ImageModal
   ],
   providers: [
     StatusBar,

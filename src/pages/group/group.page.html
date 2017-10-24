@@ -18,15 +18,16 @@
 </ion-header>
 
 <ion-content padding>
-  <image-picker></image-picker>
+    <image-picker></image-picker>
   <ion-list>
+      
     <ion-item>
       <ion-label floating>Name</ion-label>
       <ion-input type="text" [(ngModel)]="group.name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>More about this group</ion-label>
-      <ion-input type="text" [(ngModel)]="group.description"></ion-input>
+      <ion-textarea type="text" [(ngModel)]="group.description"></ion-textarea>
     </ion-item>
     <ion-item *ngIf="group.createdBy">
       <span floating>Created by: {{group?.createdBy}}</span>
