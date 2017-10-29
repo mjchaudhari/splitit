@@ -10,7 +10,7 @@ import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, Gr
 })
 export class App {
   rootPage = StartupPage;
-  //rootPage = GroupPage;
+  //``rootPage = GroupPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     
     platform.ready().then(() => {

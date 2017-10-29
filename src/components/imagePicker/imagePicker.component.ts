@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input, Output } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
 import { ImageModal} from './imageModal.component'
 @Component({
@@ -6,7 +6,7 @@ import { ImageModal} from './imageModal.component'
     selector: 'image-picker'
 })
 export class ImagePicker {
-    image:string;
+    @Input() image:string;
     private originalImage: string;
     private defaultImage: string;
     constructor(public modalCtrl: ModalController){

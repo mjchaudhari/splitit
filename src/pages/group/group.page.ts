@@ -59,7 +59,8 @@ export class GroupPage {
   save(){
     this.api.saveGroup(this.group)
     .subscribe((res)=>{
-      console.log(res);
+      //back
+      this.navCtrl.pop();
     }, (err)=>{
       console.error(err);
     });

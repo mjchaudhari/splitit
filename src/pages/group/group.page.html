@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content padding>
-    <image-picker></image-picker>
+    <image-picker [image]="group.thumbnail" ></image-picker>
   <ion-list>
       
     <ion-item>
@@ -29,13 +29,23 @@
       <ion-label floating>More about this group</ion-label>
       <ion-textarea type="text" [(ngModel)]="group.description"></ion-textarea>
     </ion-item>
-    <ion-item *ngIf="group.createdBy">
-      <span floating>Created by: {{group?.createdBy}}</span>
+    <ion-item>
+      <ion-list>
+        <ion-list-header>
+          Members
+        </ion-list-header>
+        <ion-item *ngFor="let m of group.members">
+          <ion-avatar item-start>
+            <img src="{{m.picture}}">
+          </ion-avatar>
+          <h2>{{m.firstName}} {{m.lastName}}</h2>
+          <button ion-button clear icon-only item-end>
+              <ion-icon name='close' ></ion-icon>
+            </button>
+        </ion-item>
+      </ion-list>
     </ion-item>
-    <ion-item *ngIf="group.createdOn">
-      <span floating>Created on: {{group?.createdOn}}</span>
-    </ion-item>
-    <button type="submit" ion-button full>Ok</button>
+    <button type="submit" ion-button full (click)="save()" >Ok</button>
   </ion-list>
 
 </ion-content>

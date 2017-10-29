@@ -14,12 +14,17 @@ image-modal {
     }
     
     .fileUpload {
-        position: relative;
-        overflow: hidden;
+        // position: relative;
+        // overflow: hidden;
+        // height: 100%;
+        // width:100%;
+        // margin-top: 0px;
+        // text-align: center;
         height: 100%;
-        width:100%;
-        margin-top: 0px;
-        text-align: center;
+        width: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
         
     }
     ion-icon {

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input, Output } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
 
 @Component({
@@ -6,14 +6,14 @@ import { ModalController, Platform, NavParams, ViewController } from 'ionic-angu
     selector: "image-modal"
 })
 export class ImageModal{
-    image:string;
+    @Input() image:string;
     private originalImage: string;
     private defaultImage: string;
     constructor( public params: NavParams, public viewCtrl: ViewController){
 
         this.originalImage = this.params.get('image');
         if(this.image == null || this.image == ''){
-            this.image = this.defaultImage;
+            this.image = this.originalImage ||  this.defaultImage;
         }
     }
     imageSelected(evt){
