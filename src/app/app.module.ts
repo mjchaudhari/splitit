@@ -9,7 +9,7 @@ import { App } from './app.component';
 import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, SettingsPage, SignupPage, GroupPage, AssetsPage} from '../pages/pages';
 import { Api } from "../shared/api";
 import { ImagePicker, ImageModal } from "../components/components";
-
+import { Pro } from '@ionic/pro';
 @NgModule({
   declarations: [
     App
@@ -48,8 +48,17 @@ import { ImagePicker, ImageModal } from "../components/components";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: ErrorHandler, useClass: MyErrorHandler},
     , Api
   ]
 })
+const IonicPro = Pro.init('APP_ID', {
+  appVersion: "APP_VERSION"
+});
+
+export class MyErrorHandler implements ErrorHandler {
+  handleError(err: any): void {
+    IonicPro.monitoring.handleNewError(err);
+  }
+}
 export class AppModule {}
