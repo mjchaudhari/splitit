@@ -9,18 +9,7 @@ import { Api } from "../../shared/api";
 export class StartupPage {
 
   constructor(public navCtrl: NavController, private api: Api) {
-    this.api.isTokenValid()
-      .subscribe((resp) => {
-        console.log(resp);
-        if (resp.isError) {
-          this.navCtrl.setRoot(LoginPage);
-        } else {
-          this.navCtrl.setRoot(TabsPage);
-        }
-      }, () => {
-        this.navCtrl.setRoot(LoginPage);
-      });
-    console.log("Login clicked");
+    
   }
   goToLogin() {
     this.api.isTokenValid()
