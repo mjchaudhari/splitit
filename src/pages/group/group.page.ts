@@ -5,7 +5,6 @@ import { FormBuilder, FormControl, Validators, ValidationErrors } from "@angular
 
 import { Api, Group, Profile } from "../../shared/resources";
 import { AssetsPage} from "../pages";
-
 /**
  * Generated class for the GroupPage page.
  *
@@ -24,11 +23,10 @@ export class GroupPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: Api,
     private formBuilder: FormBuilder
   ) {
-    this.groupId = navParams.get("groupId");  
-    
-    if(this.groupId){
-      this.getGroup(this.groupId);
-    }
+    this.group = navParams.get("g");  
+    // if(this.groupId){
+    //   this.getGroup(this.groupId);
+    // }
 
     this.form = formBuilder.group({
       name : [this.group.name, Validators.required],

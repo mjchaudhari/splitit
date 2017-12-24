@@ -8,8 +8,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { App } from './app.component';
 import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, SettingsPage, SignupPage, GroupPage, AssetsPage} from '../pages/pages';
 import { Api } from "../shared/api";
-import { ImagePicker, ImageModal } from "../components/components";
+import { ComponentsModule} from "../components/components.module"
+//import { ImagePicker, ImageModal, LoadingModal } from "../components/components";
 import { Pro } from '@ionic/pro';
+import { Component } from '@angular/core/src/metadata/directives';
 
 const IonicPro = Pro.init('325f4712', {
   appVersion: "0.0"
@@ -18,6 +20,7 @@ const IonicPro = Pro.init('325f4712', {
 @NgModule({
   declarations: [
     App
+    //, ComponentsModule
     , StartupPage
     , LoginPage
     , SignupPage
@@ -28,18 +31,21 @@ const IonicPro = Pro.init('325f4712', {
     , AssetsPage
 
     //Components
-     , ImagePicker
-    , ImageModal
+    //  , ImagePicker
+    // , ImageModal
+    // ,LoadingModal
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(App),
-    HttpModule
+    HttpModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     App,
+    //ComponentsModule,
     StartupPage,
     LoginPage,
     SignupPage,
@@ -48,7 +54,8 @@ const IonicPro = Pro.init('325f4712', {
     GroupsPage, GroupPage,
     FriendsPage, SettingsPage,
     AssetsPage,
-    ImageModal
+    //ImageModal,
+    //LoadingModal
   ],
   providers: [
     StatusBar,
