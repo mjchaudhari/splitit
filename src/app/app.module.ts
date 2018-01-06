@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { App } from './app.component';
 import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, SettingsPage, SignupPage, GroupPage, AssetsPage} from '../pages/pages';
-import { Api } from "../shared/api";
+import { Api, MembersModal } from "../shared/resources";
 import { ComponentsModule} from "../components/components.module"
 //import { ImagePicker, ImageModal, LoadingModal } from "../components/components";
 import { Pro } from '@ionic/pro';
@@ -31,9 +31,7 @@ const IonicPro = Pro.init('325f4712', {
     , AssetsPage
 
     //Components
-    //  , ImagePicker
-    // , ImageModal
-    // ,LoadingModal
+    , MembersModal
     
   ],
   imports: [
@@ -54,14 +52,14 @@ const IonicPro = Pro.init('325f4712', {
     GroupsPage, GroupPage,
     FriendsPage, SettingsPage,
     AssetsPage,
-    //ImageModal,
-    //LoadingModal
+    MembersModal
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     , Api
+    , MembersModal
   ]
 })
 

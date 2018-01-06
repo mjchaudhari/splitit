@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from 'ionic-angular';
-import { ImageModal } from './imagePicker/imageModal.component';
-import { ImagePicker } from './imagePicker/imagePicker.component';
-import { LoadingModal } from './loading-modal/loading-modal';
+
+import { ImageModal, ImagePicker, LoadingModal} from "./components"
+
+
 @NgModule({
 	declarations: [
 		ImageModal
 		, ImagePicker
-		,LoadingModal
+		, LoadingModal
 	],
 	entryComponents: [
 		ImagePicker
 		, ImageModal
-		,LoadingModal
+		, LoadingModal
 	],
 	imports: [
 		CommonModule,
@@ -21,6 +22,7 @@ import { LoadingModal } from './loading-modal/loading-modal';
 	],
 	providers: [
 		LoadingModal
+
 	],
 
 	exports: [

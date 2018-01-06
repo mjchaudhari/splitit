@@ -1,3 +1,64 @@
 loading-modal {
+    z-index: -1;
+    transition: z-index 0.2s step-end;
+   
+    width: 100%;
+    height: 100%;
+    position: absolute;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    &.busy {
+      z-index: 9999;
+      transition: z-index 0.2s step-start;
+      .backdrop {
+        opacity: 0.3;
+      }
+    }
     
+    .backdrop {
+        opacity: 0.01;
+        transition: opacity 0.2s;
+      }
+
+    .cp-logo-small{
+        height: 40px;
+        width: 40px;
+        margin:auto;
+    }
+    .ion-ios-cpicon-outline,
+    .ion-ios-cpicon,.ion-md-cpicon,.ion-md-cpicon-outline {
+      content: url('../assets/img/cp.png');
+    }
+    @-webkit-keyframes rotating {
+        0% { -webkit-transform: rotate(0deg);}
+        100% { -webkit-transform: rotate(360deg);}
+    }
+    @-moz-keyframes rotating {
+        0% { -moz-transform: rotate(0deg);}
+        100% { -moz-transform: rotate(360deg);}
+    }
+    @-o-keyframes rotating {
+        0% { -o-transform: rotate(0deg);}
+        100% { -o-transform: rotate(360deg);}
+    }
+    @-ms-keyframes rotating {
+        0% { -ms-transform: rotate(0deg);}
+        100% { -ms-transform: rotate(360deg);}
+    }
+    @keyframes rotating {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+        
+        
+    .rotating {
+        -webkit-animation: rotating 2s infinite linear;
+        -moz-animation: rotating 2s infinite linear;
+        -o-animation: rotating 2s infinite linear;
+        -ms-animation: rotating 2s infinite linear;
+        animation: rotating 2s infinite linear;
+    }
 }

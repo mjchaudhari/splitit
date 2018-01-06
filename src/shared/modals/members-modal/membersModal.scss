@@ -1,0 +1,51 @@
+members-modal {
+    
+    img{
+        
+    }
+    .image-container {
+        height: 100%;
+        width: 100%;
+        padding: 0px;
+        border: solid 1px lightgray;
+        background-image: url(../assets/img/cameraplaceholder.png);
+        background-position: center;
+        background-size: contain;
+    }
+    
+    .fileUpload {
+        // position: relative;
+        // overflow: hidden;
+        // height: 100%;
+        // width:100%;
+        // margin-top: 0px;
+        // text-align: center;
+        height: 100%;
+        width: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+    }
+    ion-icon {
+        display: inline-block;
+        font-size: 8.2em;
+        color: wheat;
+        position: relative;
+        top:20%;
+    }
+    .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        height: 100%;
+        width:100%;
+
+    }
+}

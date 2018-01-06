@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the LoadingModalComponent component.
@@ -8,25 +9,35 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'loading-modal',
-  templateUrl: 'loading-modal.html'
+  template: ''
 })
 //THIS COMPONENT IS NOT YET FUNCTIONAL
+@Injectable()
 export class LoadingModal {
 
   text: string;
-  isBusy: boolean;
-  constructor() {
-    console.log('Hello LoadingModalComponent Component');
-    this.text = 'Loading';
-    this.isBusy = false;
+  loader: any;
+  constructor( private loading: LoadingController) {
+    this.text = '';
+    this.loader = this.loading.create({
+      spinner: 'hide',
+      enableBackdropDismiss: true,
+      content: `
+      <img class="cp-logo-small rotating" src="./assets/img/cp.png" alt="">
+      `
+    });
   }
  
-  show(){
-    this.isBusy = true;
+  show(text?:string){
+    if(text == null){
+      text = "loading...";
+    }
+    this.loader.present();
+    this.text = text;
   }
  
   hide(){
-    this.isBusy = false;
+    this.loader.dismiss();
   }
 
 }

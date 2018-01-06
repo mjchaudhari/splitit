@@ -101,18 +101,17 @@ export class Api{
             return data.data;
         });
     }
-      /**
-      * @param data : {groupId: 1, members:"1,2,3" }
-      **/
-      addGroupMembers (data): Observable<any>{
-        
+    /**
+     * @param data : {groupId: 1, members:"1,2,3" }
+    **/
+    addGroupMembers (data): Observable<any>{
         var url = this._apiBase + "/v1/group/members";
         return this.http.post(url, data, this._getRequestOptions())
         .map((resp: Response)=> {
             let data = resp.json();
             return data.data;
         });
-      }
+    }
       
       /**
       * @param data : {groupId: 1, members:"1,2,3" }

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, ActionSheetController, LoadingController } from 'ionic-angular';
-
+import { NavController, ActionSheetController } from 'ionic-angular';
+import {LoadingModal} from "../../components/components"
 import _ from "lodash";
 import { Api } from "../../shared/api";
 import { GroupPage, AssetsPage} from "../pages";
+import { importExpr } from '@angular/compiler/src/output/output_ast';
+
 
 @Component({
   selector: 'groups_page',
@@ -11,24 +13,24 @@ import { GroupPage, AssetsPage} from "../pages";
 })
 export class GroupsPage {
   groups = [];
-  constructor(public navCtrl: NavController, private api: Api, private actions: ActionSheetController, private loader : LoadingController) {
+  constructor(public navCtrl: NavController, private api: Api, private actions: ActionSheetController, private loader : LoadingModal) {
     
   }
   ionViewWillEnter() {
     this.getGroups();
   }
   getGroups (){
-    var loader = this.loader.create({
-      spinner: 'hide',
-      content: `
-      <img class="cp-logo-small rotating" src="./assets/img/cp.png" alt="">
-      `
-    });
-    loader.present();
+    // var loader = this.loader.create({
+    //   spinner: 'hide',
+    //   content: `
+    //   <img class="cp-logo-small rotating" src="./assets/img/cp.png" alt="">
+    //   `
+    // });
+    //this.loader.show();
     this.api.getGroups()
     .subscribe((g)=>{
       this.groups = g;
-      loader.dismiss();
+      //this.loader.hide();
     });
   }
 

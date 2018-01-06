@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import _ from "lodash";
 import { FormBuilder, FormControl, Validators, ValidationErrors } from "@angular/forms";
 
-import { Api, Group, Profile } from "../../shared/resources";
-import { AssetsPage} from "../pages";
+import { Api, Group, Profile, MembersModal } from "../../shared/resources";
+
 /**
  * Generated class for the GroupPage page.
  *
@@ -18,15 +18,13 @@ import { AssetsPage} from "../pages";
 })
 export class GroupPage {
   group : Group = new Group();
-  groupId :string;
   form : any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: Api,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder, public modalCtrl: ModalController
   ) {
-    this.group = navParams.get("g");  
-    // if(this.groupId){
-    //   this.getGroup(this.groupId);
-    // }
+    if(navParams.get("g")){  
+      this.group = navParams.get("g");  
+    }
 
     this.form = formBuilder.group({
       name : [this.group.name, Validators.required],
@@ -53,6 +51,29 @@ export class GroupPage {
   }
   readFile(e){
     this.group.thumbnail = e.target.result;
+  }
+
+  editMembers() {
+    let modal = this.modalCtrl.create(MembersModal, {groupMembers: this.group.members});
+    modal.present();
+    modal.onDidDismiss(memberList => {
+        if(memberList){
+            //this.group.members = memberList;
+            //add members
+            var data = {
+              groupId: this.group._id,
+              members: _.map(memberList,'_id')
+            };
+            this.api.addGroupMembers(data)
+            .subscribe(res => {
+              console.log(res);
+              if(res.isError){
+                
+              }
+            })
+              
+        }
+    });
   }
   save(){
     this.api.saveGroup(this.group)
