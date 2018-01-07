@@ -19,6 +19,10 @@ export class LoadingModal {
   loader: any;
   constructor( private loading: LoadingController) {
     this.text = '';
+    this.create();
+  }
+    
+  create(){
     this.loader = this.loading.create({
       spinner: 'hide',
       enableBackdropDismiss: true,
@@ -27,7 +31,7 @@ export class LoadingModal {
       `
     });
   }
- 
+
   show(text?:string){
     if(text == null){
       text = "loading...";

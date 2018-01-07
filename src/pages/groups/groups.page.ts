@@ -3,8 +3,7 @@ import { NavController, ActionSheetController } from 'ionic-angular';
 import {LoadingModal} from "../../components/components"
 import _ from "lodash";
 import { Api } from "../../shared/api";
-import { GroupPage, AssetsPage} from "../pages";
-import { importExpr } from '@angular/compiler/src/output/output_ast';
+import { GroupPage} from "../pages";
 
 
 @Component({
@@ -20,17 +19,11 @@ export class GroupsPage {
     this.getGroups();
   }
   getGroups (){
-    // var loader = this.loader.create({
-    //   spinner: 'hide',
-    //   content: `
-    //   <img class="cp-logo-small rotating" src="./assets/img/cp.png" alt="">
-    //   `
-    // });
-    //this.loader.show();
+    this.loader.show();
     this.api.getGroups()
     .subscribe((g)=>{
       this.groups = g;
-      //this.loader.hide();
+      this.loader.hide();
     });
   }
 

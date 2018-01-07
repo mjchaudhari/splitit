@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Api, Profile} from "../../resources"
 import _ from "lodash";

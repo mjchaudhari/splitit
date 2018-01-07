@@ -3,7 +3,7 @@ import { Http, Response, RequestOptions, Headers } from "@angular/http";
 import {  config } from "./globals";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
-import { Subject } from "rxjs/Subject";
+//import { Subject } from "rxjs/Subject";
 
 @Injectable()
 export class Api{
@@ -21,7 +21,6 @@ export class Api{
         });
     }
     isTokenValid(): Observable<any>{
-        var token = localStorage.getItem("__at")
         return this.http.get(this._apiBase + '/v1/account/isAuthenticated', this._getRequestOptions())
         .map((response: Response)=> {
             return response.json();

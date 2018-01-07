@@ -1,9 +1,6 @@
 import {Component} from "@angular/core"
 import { MenuController } from 'ionic-angular';
 
-import { GroupsPage, FriendsPage, SettingsPage } from '../pages'
-
-
 @Component({
     selector: 'home_page',
     templateUrl: 'home.page.html'
@@ -11,7 +8,7 @@ import { GroupsPage, FriendsPage, SettingsPage } from '../pages'
 
 export class HomePage{
     
-    constructor( private Menu : MenuController){
+    constructor( public Menu : MenuController){
         Menu.enable(true);
     }
 

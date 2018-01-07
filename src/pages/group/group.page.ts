@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import _ from "lodash";
 import { FormBuilder, FormControl, Validators, ValidationErrors } from "@angular/forms";
 
-import { Api, Group, Profile, MembersModal } from "../../shared/resources";
+import { Api, Group, MembersModal } from "../../shared/resources";
 
 /**
  * Generated class for the GroupPage page.

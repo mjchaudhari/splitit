@@ -17,7 +17,9 @@ loading-modal {
         opacity: 0.3;
       }
     }
-    
+    .loading-wrapper {
+        background-color: "#000"
+    }
     .backdrop {
         opacity: 0.01;
         transition: opacity 0.2s;

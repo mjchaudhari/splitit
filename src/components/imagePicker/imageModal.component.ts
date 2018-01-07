@@ -1,5 +1,5 @@
-import { Component, ViewChild, Input, Output } from '@angular/core';
-import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
+import { Component, Input } from '@angular/core';
+import { NavParams, ViewController } from 'ionic-angular';
 
 @Component({
     templateUrl:"imageModal.component.html",
