@@ -10,12 +10,11 @@ import { StartupPage, LoginPage, TabsPage, HomePage, GroupsPage, FriendsPage, Se
 import { Api, MembersModal } from "../shared/resources";
 import { ComponentsModule} from "../components/components.module"
 //import { ImagePicker, ImageModal, LoadingModal } from "../components/components";
-import { Pro } from '@ionic/pro';
-import { Component } from '@angular/core/src/metadata/directives';
+//import { Pro } from '@ionic/pro';
 
-const IonicPro = Pro.init('325f4712', {
-  appVersion: "0.0"
-});
+// const IonicPro = Pro.init('325f4712', {
+//   appVersion: "0.0"
+// });
 
 @NgModule({
   declarations: [

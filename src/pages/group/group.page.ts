@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import _ from "lodash";
-import { FormBuilder, FormControl, Validators, ValidationErrors } from "@angular/forms";
+//import { FormBuilder, Validators, } from "@angular/forms";
 
 import { Api, Group, MembersModal } from "../../shared/resources";
 
@@ -18,19 +18,19 @@ import { Api, Group, MembersModal } from "../../shared/resources";
 })
 export class GroupPage {
   group : Group = new Group();
-  form : any;
+  //form : any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: Api,
-    private formBuilder: FormBuilder, public modalCtrl: ModalController
+    public modalCtrl: ModalController
   ) {
     if(navParams.get("g")){  
       this.group = navParams.get("g");  
     }
 
-    this.form = formBuilder.group({
-      name : [this.group.name, Validators.required],
-      description: [this.group.description, Validators.required],
-    })
-  }
+  //   this.form = formBuilder.group({
+  //     name : [this.group.name, Validators.required],
+  //     description: [this.group.description, Validators.required],
+  //   })
+ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupPage');
